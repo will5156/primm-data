@@ -26,6 +26,9 @@ def get_records(data_filename: str) -> list[dict[str, Union[str, int]]]:
       records.append(record)
 
   return records
+def convert_fields(records: list[dict[str, Union[str, int]]]) -> None:
+  for record in records:
+    record["REPORTYEAR"] = int[record["REPORTYEAR"]]
 
 def main() -> None:
   data_filename: str = "resources/stolen_bikes.csv"
